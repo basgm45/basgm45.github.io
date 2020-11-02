@@ -81,3 +81,7 @@ lightbox.addEventListener('click', function(event) {
         toggleLightbox();
     }
 })
+
+const checkdownload = document.getElementsByClassName('downloadbtn');
+console.log(checkdownload,'hello');
+console.log(checkdownload[0].baseURI);

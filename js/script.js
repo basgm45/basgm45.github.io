@@ -8,7 +8,7 @@ const filterContainer = document.querySelector('.portfolio-filter'),
 
 // get a value and set class active and remove class active when select
 for (let i = 0; i < totalFilterBtn; i++) {
-    filterBtns[i].addEventListener('click', function() {
+    filterBtns[i].addEventListener('click', function () {
         filterContainer.querySelector('.active').classList.remove('active');
         this.classList.add('active');
 
@@ -41,7 +41,7 @@ const lightbox = document.querySelector('.lightbox'),
 let itemIndex = 0;
 
 for (let i = 0; i < totalPortfolioItem; i++) {
-    portfolioItems[i].addEventListener('click', function() {
+    portfolioItems[i].addEventListener('click', function () {
         itemIndex = i;
         changeitem();
         toggleLightbox();
@@ -76,12 +76,33 @@ const changeitem = imgSrc => {
 }
 
 // close lightbox
-lightbox.addEventListener('click', function(event) {
+lightbox.addEventListener('click', function (event) {
     if (event.target === lightboxClose || event.target === lightbox) {
         toggleLightbox();
     }
 })
 
-const checkdownload = document.getElementsByClassName('downloadbtn');
-console.log(checkdownload,'hello');
-console.log(checkdownload[0].baseURI);
+let typingString = ['Front-end Developer', 'New Fresh Dev'];
+let i = 0;
+let count = 0;
+let selectedText = '';
+let text = '';
+
+
+function typingText() {
+    if (count == typingString.length) {
+        count = 0;
+    }
+    selectedText = typingString[count];
+    text = selectedText.slice(0, ++i);
+    // input singtext if text.lenth = fulltext. give a count++ and i reset 0;
+    document.getElementById('typing').innerHTML = text;
+    if (text.length === selectedText.length) {
+        count++;
+        i = 0;
+    }
+    setTimeout(() => {
+        typingText()
+    }, 220);
+}
+typingText();

@@ -366,6 +366,8 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
   margin-top: 30px;
+  word-wrap: break-word;
+
 }
 
 .about .about-content .personal-info .info-item {
@@ -427,7 +429,6 @@ body {
   box-shadow: none;
   border: 1px solid #dcdcdc;
   text-align: center;
-  margin-right: 60px;
   margin-bottom: 30px;
   vertical-align: baseline;
   transition: all 0.2s ease-in-out 0s;

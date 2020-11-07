@@ -82,27 +82,41 @@ lightbox.addEventListener('click', function (event) {
     }
 })
 
-let typingString = ['Front-end Developer', 'New Fresh Dev'];
-let i = 0;
-let count = 0;
-let selectedText = '';
-let text = '';
+// let typingString = ['Front-end Developer', 'New Fresh Dev'];
+// let i = 0;
+// let count = 0;
+// let selectedText = '';
+// let text = '';
 
 
-function typingText() {
-    if (count == typingString.length) {
-        count = 0;
-    }
-    selectedText = typingString[count];
-    text = selectedText.slice(0, ++i);
-    // input singtext if text.lenth = fulltext. give a count++ and i reset 0;
-    document.getElementById('typing').innerHTML = text;
-    if (text.length === selectedText.length) {
-        count++;
-        i = 0;
-    }
-    setTimeout(() => {
-        typingText()
-    }, 220);
-}
-typingText();
+// function typingText() {
+//     if (count == typingString.length) {
+//         count = 0;
+//     }
+//     selectedText = typingString[count];
+//     text = selectedText.slice(0, ++i);
+//     // input singtext if text.lenth = fulltext. give a count++ and i reset 0;
+//     document.getElementById('typing').innerHTML = text;
+//     if (text.length === selectedText.length) {
+//         count++;
+//         i = 0;
+//     }
+
+//     setTimeout(() => {
+//         typingText();
+//     }, 300);
+// }
+// typingText();
+
+var typing = document.getElementById('typing');
+var typewriter = new Typewriter(typing, {
+    loop: true
+});
+
+typewriter.typeString('Front-end Developer')
+    .pauseFor(2500)
+    .start()
+    .deleteAll();
+typewriter.typeString('New Fresh Dev')
+    .pauseFor(2500)
+    .start();

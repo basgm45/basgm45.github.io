@@ -574,6 +574,7 @@ body {
   color: #504e70;
   margin: 0;
   padding-bottom: 40px;
+  word-wrap: break-word;
 }
 /* Portfolio */
 

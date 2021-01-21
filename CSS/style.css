@@ -109,10 +109,10 @@ body {
 /* Aside */
 
 .aside {
-  width: 270px;
   /* background-color: #040b14; */
   background-color: #161616;
   position: fixed;
+  width: 270px;
   height: 100%;
   left: 0;
   top: 0;
@@ -138,8 +138,7 @@ body {
   z-index: 11;
   border-radius: 5px;
   background-color: #fdf9ff;
-  /* display: -ms-flexbox;
-    display: flex; */
+  
   display: none;
   -ms-flex-align: center;
   align-items: center;
@@ -237,6 +236,32 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+/* toggle hamburger */
+.toggle {
+  position: absolute;
+  top: 0;
+  /* right: 0; */
+  width: 60px;
+  height: 60px;
+  background: rgba(83, 77, 77, 0.5);
+  cursor: pointer;
+}
+.toggle.active{
+  background: rgba(83, 77, 77);
+}
+.toggle::before{
+  content: '\f0c9';
+  font-family: fontAwesome;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 38px;
+  color: #fff;
+}
+.toggle.active:before{
+  content: '\f00d';
 }
 /* Home */
 
@@ -962,11 +987,25 @@ body {
 /* responsive */
 
 @media screen and (max-width: 1199px) {
-  .aside {
-    display: none;
+  .aside{
+    left: -270px;
+  }
+  .toggle{
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .aside.active{
+    left: 0px;
+    width: 100%;
+    position: absolute;
   }
   .main-content {
     padding-left: 0;
+  }
+  .aside .logo{
+    text-align: center;
   }
   .about .about-content .personal-info .info-item p span {
     display: block;
@@ -1007,8 +1046,6 @@ body {
   }
 }
 
-
-
 @media screen and (max-width: 400px) {
   .about .about-content .skill .row {
     flex: 0 0 100%;
@@ -1019,4 +1056,3 @@ body {
     width: 180px;
   }
 }
-

@@ -117,3 +117,12 @@ var typewriter = new Typewriter(typing, {
 
 typewriter.typeString("Front-end Developer").pauseFor(2500).start().deleteAll();
 typewriter.typeString("New Fresh Dev").pauseFor(2500).start();
+
+// toggle hamburger
+function toggleMenu(){
+  let aside = document.querySelector('.aside');
+  aside.classList.toggle('active');
+  let toggle = document.querySelector('.toggle');
+  toggle.classList.toggle('active');
+
+}
